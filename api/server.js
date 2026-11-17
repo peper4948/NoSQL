@@ -16,9 +16,14 @@ app.use('/api/usuarios', require('./routes/UsuariosRoutes'));
 app.use('/api/proyectos', require('./routes/ProyectoRoutes'));
 app.use('/api/avances', require('./routes/AvancesRoutes'));
 
+app.use('/api/zonasconservacion', require('./routes/ZonasConservacionRoutes'));
+app.use('/api/observacionesespecies', require('./routes/ObservacionesEspeciesRoutes'));
+app.use('/api/registrosresiduos', require('./routes/RegistrosResiduosRoutes'));
+
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("BD conectada");
+
         app.listen(PORT, () => {
             console.log(`Serve API http://localhost:${PORT}`);
         });
