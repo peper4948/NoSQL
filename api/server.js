@@ -24,6 +24,10 @@ app.use('/api/reportescampo', require('./routes/ReportesCampoRoutes'));
 app.use('/api/reportesciudadanos', require('./routes/ReportesCiudadanosRoutes'));
 app.use('/api/donantes', require('./routes/DonantesRoutes'));
 
+app.use('/api/actividades', require('./routes/ActividadesRoutes'));
+app.use('/api/inscripciones', require('./routes/InscripcionesRoutes'));
+app.use('/api/alianzas', require('./routes/AlianzasRoutes'));
+
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("BD conectada");
