@@ -104,7 +104,7 @@ function guardarRegistro() {
     try {
         ubicacionObj = JSON.parse($('#ubicacion').val());
     } catch (e) {
-        mostrarMensaje('El campo ubicación debe tener un formato JSON válido, por ejemplo: {"lat": 9.93, "lng": -84.08}', 'danger');
+        mostrarMensaje('El campo ubicación debe tener un formato JSON válido, por ejemplo: {"type":"Point","coordinates":[-84.08,9.93]}', 'danger');
         return;
     }
 
