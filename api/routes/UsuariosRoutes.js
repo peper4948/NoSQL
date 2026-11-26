@@ -71,8 +71,8 @@ router.post("/", async (req, res) => {
     const usuario = new Usuario(req.body);
     try {
         const nuevo = await usuario.save();
-        const { contra, ...usuario } = nuevo.toObject(); // no se devuelve la contraseña
-        res.status(201).json(usuario);
+        const { contra, ...sinContra } = nuevo.toObject(); // no se devuelve la contraseña
+        res.status(201).json(sinContra);
     } catch (error) {
         res.status(400).json({ mensaje: error.message });
     }
